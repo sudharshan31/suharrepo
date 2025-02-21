@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: latest
+  pre_build:
+    commands:
+      - echo "Installing Terraform..."
+      - curl -o terraform.zip https://releases.hashicorp.com/terraform/1.5.0/terraform_1.5.0_linux_amd64.zip
+      - unzip terraform.zip
+      - mv terraform /usr/local/bin/
+      - terraform --version
+      - terraform init
+  build:
+    commands:
+      - terraform validate
+      - terraform plan -out=tfplan
+  post_build:
+    commands:
+      - terraform apply -auto-approve tfplan
+artifacts:
+  files:
+    - '**/*'
