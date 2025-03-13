@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "mybucket12032025" {
-  bucket = "mybucket12032025" # Replace with a globally unique bucket name
+resource "aws_s3_bucket" "mybucket15032025" {
+  bucket = "mybucket15032025" # Replace with a globally unique bucket name
 
   # Optional: Enable versioning
   versioning {
