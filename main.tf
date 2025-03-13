@@ -17,4 +17,3 @@ resource "aws_s3_bucket" "mybucket12032025" {
 
 
 }
-
