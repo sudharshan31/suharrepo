@@ -14,10 +14,10 @@ phases:
   build:
     commands:
       - terraform validate
-      - terraform plan -out=tfplan
+      - terraform plan 
   post_build:
     commands:
-      - terraform apply -auto-approve tfplan
+      - terraform apply
 artifacts:
   files:
     - '**/*'
